@@ -5,3 +5,8 @@ module.exports.addingProduct = (data, callback) => {
     VALUES = [data.productName, data.productUrl, data.productPrice];
     pool.query(SQLSTATEMENT, VALUES, callback);
 }
+
+module.exports.getingProduct = (callback) => {
+    SQLSTATEMENT = `SELECT * FROM product`;
+    pool.query(SQLSTATEMENT, callback);
+}

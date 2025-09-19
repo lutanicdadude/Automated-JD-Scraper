@@ -22,3 +22,16 @@ module.exports.addProduct = (req, res) => {
 
     model.addingProduct(data, callback);
 }
+
+module.exports.getProduct = (req, res) => {
+    const callback = (error, result) => {
+        if (error) {
+            console.log(error);
+            return res.status(500).json({ "message": "Internal Server Error." });
+        } else {
+            return res.status(200).json(result);
+        }
+    }
+
+    model.getingProduct(callback);
+}
