@@ -33,51 +33,42 @@
         </div>
     </nav>
 
-    <!-- Products Section -->
-    <section class="container my-5  text-center">
-        <h2 class="mb-4">Products</h2>
+    <!-- Product Component -->
+    <div class="container mt-4">
+        <h3>Products</h3>
 
-        <!-- Add New Product Button -->
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
-            Add New Product
-        </button>
-
-        <!-- Product List -->
-        <ul id="productList" class="list-group mt-4"></ul>
-    </section>
-
-    <!-- Modal (Pop-up Form) -->
-    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="productForm">
-                        <div class="mb-3">
-                            <label for="productName" class="form-label">Product Name</label>
-                            <input type="text" class="form-control" id="productName" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productURL" class="form-label">Product URL</label>
-                            <input type="text" class="form-control" id="productURL" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="productPrice" class="form-label">Price</label>
-                            <input type="text" class="form-control" id="productPrice" required>
-                        </div>
-                        <button type="submit" class="btn btn-success">Save Product</button>
-                    </form>
-                </div>
+        <!-- Add product form -->
+        <form id="productForm" class="row g-3 mb-3">
+            <div class="col-md-4">
+                <input type="text" id="productName" class="form-control" placeholder="Product Name" required>
             </div>
-        </div>
+            <div class="col-md-4">
+                <input type="url" id="productUrl" class="form-control" placeholder="Product URL" required>
+            </div>
+            <div class="col-md-4">
+                <input type="number" id="productPrice" class="form-control" placeholder="Price" required>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Add Product</button>
+            </div>
+        </form>
+
+        <!-- Products Table -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Product URL</th>
+                    <th>Product Price</th>
+                </tr>
+            </thead>
+            <tbody id="productTableBody"></tbody>
+        </table>
     </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/createProductTable.js"></script>
     <script src="./js/products.js"></script>
 </body>
 

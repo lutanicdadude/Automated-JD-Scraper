@@ -2,8 +2,9 @@ document.getElementById("productForm").addEventListener("submit", async function
     e.preventDefault();
 
     const productName = document.getElementById("productName").value;
-    const productUrl = document.getElementById("productURL").value;
+    const productUrl = document.getElementById("productUrl").value;
     const productPrice = document.getElementById("productPrice").value;
+    console.log(productName)
 
     const addProductData = `http://localhost:3000/product/addProduct`;
 
@@ -26,6 +27,10 @@ document.getElementById("productForm").addEventListener("submit", async function
 
         const result = await addProductResult.json();
         alert(result.message); // show success or error
+
+        if (result.success) {
+            window.location.reload();
+        }
     } catch (err) {
         alert("Unexpected error when adding product.");
         console.log("Error adding product: ", err);
@@ -33,8 +38,4 @@ document.getElementById("productForm").addEventListener("submit", async function
 
     // Reset form
     document.getElementById("productForm").reset();
-
-    // Close modal
-    const modal = bootstrap.Modal.getInstance(document.getElementById('addProductModal'));
-    modal.hide();
 });
