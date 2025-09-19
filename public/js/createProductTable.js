@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         const tbody = document.getElementById("productTableBody");
         tbody.innerHTML = "";
 
-        products.forEach(p => {
+        products.output.forEach(p => {
             const row = `<tr>
                 <td>${p.productName}</td>
                 <td><a href="${p.productUrl}" target="_blank">${p.productUrl}</a></td>
