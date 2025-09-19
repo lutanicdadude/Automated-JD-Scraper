@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/lutanicdadude/Automated-JD-Scraper#readme",
   "dependencies": {
+    "body-parser": "^2.2.0",
     "dotenv": "^17.2.2",
+    "exceljs": "^4.4.0",
     "express": "^5.1.0",
     "mysql2": "^3.15.0",
     "nodemon": "^3.1.10"
