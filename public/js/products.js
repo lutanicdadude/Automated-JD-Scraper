@@ -3,12 +3,7 @@ document.getElementById("productForm").addEventListener("submit", async function
 
     const name = document.getElementById("productName").value;
 
-    // POST request to backend API
-    const response = await fetch("/add-product", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name }) // send product name
-    });
+
 
     const result = await response.json();
     alert(result.message); // show success or error
