@@ -2,7 +2,7 @@ const model = require("../models/productModel");
 
 module.exports.addProduct = (req, res) => {
     if (!req.body.productName || !req.body.productUrl || !req.body.productPrice) {
-        return res.status(500).json({ "message": "Missing productName, productUrl or productPrice." });
+        return res.status(500).json({ "message": "Missing productName, productUrl or productPrice.", "success": false });
     }
 
     const data = {
@@ -14,9 +14,9 @@ module.exports.addProduct = (req, res) => {
     const callback = (error, result) => {
         if (error) {
             console.log(error);
-            return res.status(500).json({ "message": "Internal Server Error." });
+            return res.status(500).json({ "message": "Internal Server Error.", "success": false });
         } else {
-            return res.status(200).json({ "message": "Product added successfully." });
+            return res.status(200).json({ "message": "Product added successfully.", "success": true });
         }
     }
 
@@ -27,9 +27,9 @@ module.exports.getProduct = (req, res) => {
     const callback = (error, result) => {
         if (error) {
             console.log(error);
-            return res.status(500).json({ "message": "Internal Server Error." });
+            return res.status(500).json({ "message": "Internal Server Error.", "success": false });
         } else {
-            return res.status(200).json(result);
+            return res.status(200).json({ "output": result, "success": true });
         }
     }
 
