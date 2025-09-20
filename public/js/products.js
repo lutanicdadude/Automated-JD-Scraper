@@ -26,7 +26,6 @@ document.getElementById("productForm").addEventListener("submit", async function
         }
 
         const result = await addProductResult.json();
-        alert(result.message); // show success or error
 
         if (result.success) {
             window.location.reload();
